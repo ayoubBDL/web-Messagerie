@@ -1,0 +1,202 @@
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+
+
+
+
+.spacer40 {
+	margin-top:40px;
+}
+
+.red {
+	color:red;
+}
+
+#Bloc1 {float:left ; width:90%; margin-left: 80px; margin-right: 50;margin-top: 50px;}
+
+
+ #Bloc2 {float:none; width:70%; margin-left: 180px; margin-right: 200px; margin-top: 50px;}
+ .list{
+ margin-left: 300px;
+ margin-top: 200px}
+ #return{
+ margin-right: 20px;
+ }
+#messageS
+{
+	width: 450px;
+	height: 200px;
+}
+
+.bnt {width: 100%;}
+.banner-heading{
+	font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+#title
+{
+	margin-left: 400px;}
+}
+
+#login
+{
+	position:relative;
+	width:50%;
+	hei ght:50%;
+	/*background:#dff0d8;*/
+	color:#0f2a 4a;
+	opacity:1;
+	border-radius:3px;
+	text-align:center;
+	font-family:'Merriweather Sans';
+	
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+}
+login {
+    width: 500px;
+    margin: 20px auto;
+    text-align: left;
+}
+#head{
+	background-color: #AFEEEE;
+}
+    
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 27.5rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+   background: linear-gradient(to top left, #ccffff 0%, #3399ff 100%);
+  
+ 
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+/* body {
+  background: #599fd9;
+  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+  background: linear-gradient(to right, #599fd9, #c2e59c);
+  min-height: 100vh;
+  overflow-x: hidden;
+} */
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}

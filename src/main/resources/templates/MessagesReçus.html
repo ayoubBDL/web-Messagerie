@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:th="http://www.thymeleaf.org" 
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+  layout:decorate="~{Fragments/Header}"
+	
+	>				
+<head>
+<meta charset="utf-8" />
+<title>Messages</title>
+
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+	
+	<footer class="navbar-fixed-bottom pull-right " >
+	<form th:action="@{/consulterMessage}" method="get">
+					<!-- <input type="text" name="ref" th:value="${param.ref}"/> -->
+					<div class="form-group text-right" id="return"><button class="btn btn-primary">Return</button></div>
+	</form>
+	</footer>
+	<div><br></div>
+	<div class="panel panel-primary" id="Bloc1">
+	<div class="col-md-12">
+			
+			<!-- <div class="panel panel-primary" th:if="${mes}" > -->
+			<!-- <div class="panel panel-primary" th:if="${mes.class.simpleName=='MessageCAT'}">  -->
+				
+				<center><div id="head" class="panel-heading">Informations sur le message Reçus</div></center>
+				<table id="mytable" class="table table-bordered table-striped">
+				<div class="panel-body">
+				
+					<thead>
+					<tr>
+								<th scope="col"><label>Id:</label> </th>
+						
+								<th scope="col"><label>Date:</label> </th>
+								
+							
+								<th scope="col"><label>Object:</label> </th>
+								
+								<th scope="col"><label>Message:</label> </th>
+
+								<th scope="col"><label>File:</label></th>
+							
+								<th scope="col"><label>From</label> </th>
+					</tr>
+					</thead>
+					<tbody >
+					<th:block th:each="item:${list}" >
+							<div th:if="${item.userS.MLE}==${param.ref}">
+							<tr id="ligne" >
+								
+								<td scope="row"><label th:text="${item.id}"></label> </td>
+							
+								
+								<td scope="row"><label th:text="${item.date}"></label></td>
+							
+								
+								<td scope="row"><label th:text="${item.objet}"></label></td>
+							
+								
+								<td scope="row"  ><label
+									th:text="${item.message}"></label></td>
+							
+								
+								<td scope="row"><label
+									th:text="${item.user.nom+' '+ item.user.prenom}"></label></td>
+									<td scope="row"><label>
+								<form th:action="@{/delete}" method="get">
+									<input type="text" name="id" hidden th:value="${item.id}"/>
+									<button><img th:src="@{/images/img.png}" alt="memorynotfound logo"/> </button>
+								</form>
+								</label></td>
+							</tr>
+							</div>
+							
+					</th:block>
+								<th scope="col"><label>1</label> </th>
+						
+								<th scope="col"><label>2019-12-29</label> </th>
+								
+							
+								<th scope="col"><label>Test</label> </th>
+								
+								<th scope="col"><label>TestMessage</label> </th>
+								
+								<th scope="col"><label></label></th>
+							
+								<th scope="col"><label><button><img th:src="@{/images/im.png}" alt="memorynotfound logo"/> </button></th>
+					</tbody>
+					</table>
+					<div class="pagination-container">
+						<nav>
+							<ul class="pagination"> </ul>
+						</nav>
+					
+					</div>
+					
+				</div>
+				</div>
+				
+				</div>
+				
+</body>
+</html>

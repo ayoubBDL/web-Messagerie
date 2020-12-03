@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:th="http://www.thymeleaf.org" 
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+  layout:decorate="~{Fragments/Header}"
+	
+	>				
+<head>
+<meta charset="utf-8" />
+<title>Messages Enovyés</title>
+
+
+
+
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+	<footer class="navbar-fixed-bottom pull-right " >
+	<form th:action="@{/consulterMessage}" method="get">
+					<!-- <input type="text" name="ref" th:value="${param.ref}"/> -->
+					<div class="form-group text-right" id="return"><button class="btn btn-primary">Return</button></div>
+	</form>
+	</footer>
+	
+
+	<div><br></div>
+	<div class="panel panel-primary" id="Bloc1">
+	<div class="col-md-12 ">
+			
+			<!-- <div class="panel panel-primary" th:if="${mes}" > -->
+			<!-- <div class="panel panel-primary" th:if="${mes.class.simpleName=='MessageCAT'}">  -->
+				
+				<center><div id="head" class="panel-heading">Informations sur le message Envoyés</div></center>
+				<table id="mytable" class="table table-bordered table-striped">
+				<!-- <div class="card shadow mb-4">
+            	<div class="card-header py-3">
+              		<h6 class="m-0 font-weight-bold text-primary">Informations sur le message Envoyés</h6>
+            	</div>
+           		<div class="card-body">
+             	<div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> -->
+				<div class="panel-body">
+					
+					<thead>
+					<tr>
+								<th scope="col"><label>Id:</label> </th>
+						
+								<th scope="col"><label>Date:</label> </th>
+								
+							
+								<th scope="col"><label>Object:</label> </th>
+								
+								<th scope="col"><label>Message:</label> </th>
+								<th scope="col"> <label>File:</label> </th>
+								
+								<th scope="col"><label>To:</label> </th>
+								
+								<th scope="col"><label>Delete </label> </th>
+					</tr>
+					</thead>
+					<tbody >
+					<th:block th:each="item:${list}" >
+							<!-- <input type="text" th:value="${item.userS.MLE.getClass().getName()}">
+							<input type="text" th:value="${param.ref.getClass().getName()}">
+							<input type="text" th:value="${item.userS.MLE} eq ${param.ref}"> -->
+							<div th:if="${item.userS.MLE!=param.ref}">
+							<tr id="ligne" >
+								
+								<td scope="row"><label th:text="${item.id}"></label> </td>
+							
+								
+								<td scope="row"><label th:text="${item.date}"></label></td>
+							
+								
+								<td scope="row"><label th:text="${item.objet}"></label></td>
+							
+								
+								<td scope="row"  ><label
+									th:text="${item.message}"></label></td>
+							
+								<td scope="row"> <label></label></td>
+									
+								<td scope="row"><label
+									th:text="${item.userS.nom+' '+ item.userS.prenom}"></label></td>
+									
+								<!-- <td scope="row"><label
+									th:text="${item.user.nom+' '+ item.user.prenom}"></label></td> -->
+								
+								<td scope="row"><label>
+								<form th:action="@{/delete}" method="get">
+									<input type="text" name="id" hidden th:value="${item.id}"/>
+									<button><img th:src="@{/images/im.png}" alt="memorynotfound logo"/> </button>
+								</form>
+								</label></td>
+								
+								
+							</tr>
+							</div>
+							
+					</th:block>
+					<th scope="col"><label>3:</label> </th>
+						
+								<th scope="col"><label>2019-19-29</label> </th>
+								
+							
+								<th scope="col"><label>Demande d'assurance</label> </th>
+								
+								<th scope="col"><label>veuillez trouver ci-joint le document nécessaire </label> </th>
+								<th scope="col"> KAOUSSI_Abdelghani_CV.pdf</label> </th>
+								
+								<th scope="col"><label>kaoussi abdelghani</label> </th>
+								
+								<th scope="col"><label><button><img th:src="@{/images/im.png}" alt="memorynotfound logo"/> </button></label> </th>
+					</tbody>
+					</table>
+					
+				</div>
+				</div>	
+				</div>
+				</div>
+				
+				</div>
+				
+</body>
+</html>

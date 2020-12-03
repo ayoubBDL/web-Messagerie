@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:th="http://www.thymeleaf.org" 
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+  layout:decorate="~{Fragments/Header}"
+	
+	>		
+<head>
+<meta charset="ISO-8859-1">
+<title>New Message</title>
+<link rel="stylesheet" type="text/css" href="../static/css/main.css" th:href="@{/css/main.css}" />
+</head>
+<body>
+<div layout:fragment="content" class="container">
+<center>
+<div class="panel panel-primary" id="Bloc2">
+				<div class="panel-heading"> Envoie d'un message</div>
+				<div class="panel-body">
+				
+					<form id="multipleUploadForm" name="multipleUploadForm" th:action="@{/NouveauMessage}" method="get">
+					
+						<div>
+							<table>
+								<tr >
+								<th ><label>A:</label></th>
+								<td><input type="text" name="MLE"
+								th:value="${MLE}" /></td>
+								</tr>
+								
+								<td><input type="text" name="ref"
+								hidden th:value="${ref}" /></td>
+								
+								<tr >
+								<th ><label><br>Objet:</label></th>
+								<td><input type="text" name="objetMessage"
+								th:value="${objetMessage}" /></td>
+								</tr>
+								
+								<!-- <tr>
+								<th><label><br>Date:</label> </th>
+								
+								<td><input type="date" id="start" name="dateMessage" th:value="${dateMessage} "></td>
+								</tr> -->
+								<tr>
+								<th ><label><br>File:</label></th>
+								<td><div class="upload-container">
+            
+						            <div class="upload-content">
+						                <div class="single-upload">
+						                    
+						                    <form id="singleUploadForm" name="singleUploadForm">
+						                        <input id="singleFileUploadInput" type="file" name="file" class="file-input" required />
+						                        
+						                    </form>
+						                    
+						                </div>
+						              
+						            </div>
+						        </div>
+       
+                  				 </td>
+                  				 </tr>
+								<tr>
+								<th><label> Message:</label> </th>
+								<td>
+								<textarea name="message" id="messageS" required></textarea>
+								</td>
+								</tr>
+								<tr >
+								<th ><button type="submit" class="btn btn-primary">Envoyer</button></th>
+								</tr>
+							</table>
+						</div>
+					</form>
+					<div class="text-danger" th:if="${exception}"
+						th:text="${exception.message}"></div>
+				</div>
+			</div>
+			</center>
+			
+</div>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+
+			
+</body>
+</html>
